@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-*,
-::after,
-::before{
+*
+{
     padding:0;
     margin:0;
     box-sizing: border-box;
@@ -30,6 +29,14 @@ header{
     display: none;
 }
 
+.rotate{
+    transform: rotateZ(90deg);
+}
+
+.noRotate{
+    transform: none;
+}
+
 @media screen and (max-width:768px){
     nav .menu_icons{
         display: block;
@@ -48,9 +55,30 @@ header{
     }
 
     nav.menu ul {
-        margin:0;
         width: 300px;
     }
+    
+    nav.menu ul li {
+        margin:10px 0px;
+    }
+}
+
+@media screen and (max-width:445px) {
+    div.login{
+        right:-145px;
+    }
+
+    div.login::after{
+        right:185px;
+    }
+
+    div.login::before{
+        right:185px;
+    }
+    header{
+        flex-direction: column;
+    }
+    
 }
 
 .logo{
@@ -224,7 +252,7 @@ hr{
 }
 /* foods */
 .foods{
-    margin: auto;
+    margin:50px auto;
     padding:0 10%;
 }
 
@@ -376,5 +404,100 @@ h3{
     transform: scale(1.06);
 }
 
+/* footer  */
+footer{
+    background-color:#000000;
+    color:#fff;
+    margin-top: 20px;
+    padding:25px 10%;
+}
+
+footer p{
+    font-size: 15px;
+}
+
+.social_icons{
+    margin:20px 0;
+}
+
+.social_icons a{
+    color:#fff;
+    transition: 0.3s;
+}
+
+.social_icons a:hover{
+    color:rgb(60, 60, 247)
+}
+
+.social_icons i {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+footer img{
+    margin-top: 20px;
+    height: 50px;
+    cursor: pointer;
+    border:1px solid #fff;
+}
+
+footer img{
+    margin-left:10px;
+}
+
+footer .div2{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .div2 h3{
+   margin-bottom: 10px;
+}
+
+footer .div2 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+footer .div2 ul a{
+    font-size: 13px;
+    color:white;
+    text-decoration: none;
+    margin-bottom: 5px;   
+}
+
+footer .div2 ul li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+footer .div2 ul li a::after{
+    position: absolute;
+    bottom: -3px;
+    left:0px;
+    content:"";
+    background-color:red;
+    transition: 0.7s ease;
+    width: 0%;
+    height: 1.5px;
+}
+
+footer .div2 ul li:hover a::after{
+    width: 100%;
+    
+}
+
+footer .div3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height:100px;
+}
 
 
